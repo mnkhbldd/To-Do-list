@@ -2,7 +2,7 @@
 import { Button } from ".";
 import { useState } from "react";
 
-export const Task = ({ Title, isDone }) => {
+export const Task = ({ Title, isDone, onClick }) => {
   const [isChecked, setIsChecked] = useState(isDone);
 
   const HandleOnChange = () => {
@@ -21,7 +21,10 @@ export const Task = ({ Title, isDone }) => {
           {Title}
         </p>
       </div>
-      <Button className="bg-[#FEF2F2] text-[#EF4444] px-3 py-[6px]">
+      <Button
+        onClick={onClick}
+        className="bg-[#FEF2F2] text-[#EF4444] px-3 py-[6px]"
+      >
         Delete
       </Button>
     </div>
